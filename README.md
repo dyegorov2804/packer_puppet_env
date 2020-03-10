@@ -33,7 +33,7 @@ To recreate from scratch, rerunning all DSL scripts and wiping all settings:
     export AWS_ACCESS_KEY=VALID-ACCESS-KEY
     export AWS_SECRET_ACCESS_KEY=VALID-SECRET-ACCESS-KEY
     docker-compose down
-    docker volume rm packer_puppet_env_jenkins
+    docker volume rm packer_puppet_env_data-jenkins
     docker-compose build
     # On Mac OS X
     docker-compose up
