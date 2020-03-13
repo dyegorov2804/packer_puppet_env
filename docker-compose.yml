@@ -1,0 +1,23 @@
+version: "2.2"
+volumes:
+  data-jenkins:
+    driver: "local"
+services:
+  jenkins:
+    environment:
+      - AWS_ACCESS_KEY=${AWS_ACCESS_KEY}
+      - AWS_SECRET_KEY=${AWS_SECRET_KEY}
+    build:
+      context: ./jenkins
+      dockerfile: Dockerfile
+      args:
+        - jenkins_version=2.204.2
+        - packer_version=1.5.1
+    ports:
+      - "8080:8080"
+      - "5901-6000:5901-6000"
+    restart: "always"
+    volumes:
+      - "data-jenkins:/var/jenkins_home:z"
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ${HOME}/.gitconfig:/var/jenkins_home/.gitconfig

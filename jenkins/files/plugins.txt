@@ -1,0 +1,7 @@
+workflow-cps:2.80
+workflow-aggregator:2.6
+job-dsl:1.76
+git:4.2.0
+script-security:1.70
+permissive-script-security:0.6
+aws-credentials:1.28
